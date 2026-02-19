@@ -1,0 +1,179 @@
+@import '@fontsource/poppins/400.css';
+@import '@fontsource/poppins/500.css';
+@import '@fontsource/poppins/600.css';
+@import '@fontsource/poppins/700.css';
+@import '@fontsource/montserrat/400.css';
+@import '@fontsource/montserrat/500.css';
+@import '@fontsource/montserrat/600.css';
+@import '@fontsource/raleway/400.css';
+@import '@fontsource/raleway/500.css';
+@import '@fontsource/raleway/600.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Vidyavya Brand Colors */
+    --background: 24 60% 98%; /* #FDF8F5 */
+    --foreground: 0 0% 17%; /* #2B2B2B */
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 17%;
+
+    --primary: 0 100% 67%; /* #FF5757 - Coral accent */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 28% 29%; /* #34495E */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 24 30% 94%;
+    --muted-foreground: 210 20% 40%;
+
+    --accent: 197 58% 79%; /* #A8D8EA */
+    --accent-foreground: 0 0% 17%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 24 20% 90%;
+    --input: 24 20% 90%;
+    --ring: 0 100% 67%;
+
+    --radius: 0.5rem;
+
+    /* Custom Design Tokens */
+    --cream: 24 60% 98%;
+    --charcoal: 0 0% 17%;
+    --slate: 210 28% 29%;
+    --coral: 0 100% 67%;
+    --sky: 197 58% 79%;
+
+    /* Typography */
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Montserrat', sans-serif;
+    --font-accent: 'Raleway', sans-serif;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -2px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -4px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.1), 0 8px 10px -6px hsl(0 0% 0% / 0.1);
+    --shadow-card: 0 4px 20px -2px hsl(210 28% 29% / 0.08);
+    --shadow-hover: 0 8px 30px -4px hsl(210 28% 29% / 0.12);
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(0 100% 67%) 0%, hsl(0 100% 60%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(210 28% 29%) 0%, hsl(210 28% 35%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(24 60% 98%) 0%, hsl(24 40% 95%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(197 58% 79%) 0%, hsl(197 58% 85%) 100%);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-coral to-primary;
+  }
+
+  /* Scroll animations */
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Logo strip animation */
+  .logo-scroll {
+    animation: scroll 30s linear infinite;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Testimonial carousel */
+  .testimonial-scroll {
+    animation: testimonialScroll 40s linear infinite;
+  }
+
+  @keyframes testimonialScroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .font-accent {
+    font-family: var(--font-accent);
+  }
+}

@@ -2,7 +2,7 @@ import Layout from '@/components/layout/Layout';
 import Section from '@/components/ui/Section';
 import SectionHeader from '@/components/ui/SectionHeader';
 import { motion } from 'framer-motion';
-import { Eye, Target, Lightbulb, Users, CheckCircle } from 'lucide-react';
+import { Eye, Target, Linkedin } from 'lucide-react';
 
 const modelSteps = [
   {
@@ -28,12 +28,16 @@ const founders = [
     role: 'Founder & CEO',
     bio: 'Siddharth founded Vidyavya to bridge the gap between academic learning and real industry needs. A seasoned entrepreneur, he also co-founded Meta for Data and focuses on building scalable, industry-driven tech businesses.',
     initials: 'SS',
+    image: '/founders/siddharth.jpeg',
+    linkedin: 'https://www.linkedin.com/in/siddharth-surve-a336131b9/',
   },
   {
     name: 'Saachin Mane',
     role: 'Co-founder',
     bio: 'Saachin is a tech leader with deep expertise in data, cloud, AI, and automation. Founder of Zyver and co-founder of Meta for Data, he is passionate about building next-generation technology and aligning education with real-world industry demands.',
     initials: 'SM',
+    image: '/founders/saachin.jpeg',
+    linkedin: 'https://www.linkedin.com/in/saachin-mane-75070b186/',
   },
 ];
 
@@ -134,8 +138,8 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={`relative p-6 rounded-xl shadow-card transition-all ${item.title === 'Build'
-                  ? 'bg-[#FF5757] text-white'
-                  : 'bg-card text-foreground'
+                ? 'bg-[#FF5757] text-white'
+                : 'bg-card text-foreground'
                 }`}
             >
               <span className={`absolute -top-3 -left-3 font-heading text-5xl font-bold ${item.title === 'Build' ? 'text-white/20' : 'text-primary/20'
@@ -174,12 +178,21 @@ const About = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-card rounded-2xl p-8 shadow-card text-center"
             >
-              <div className="w-32 h-32 mx-auto mb-6 bg-secondary rounded-full flex items-center justify-center relative">
-                <span className="font-heading text-3xl font-bold text-secondary-foreground">
-                  {founder.initials}
-                </span>
-                <a href="#" className="absolute bottom-0 right-0 bg-white rounded-full p-2 shadow-md hover:scale-110 transition-transform">
-                  <Users className="w-4 h-4 text-[#0077b5]" /> {/* Using Users as placeholder for Linkedin until imported */}
+              <div className="w-44 h-44 md:w-52 md:h-52 mx-auto mb-6 rounded-full relative group">
+                {/* Founder Image */}
+                <img
+                  src={founder.image}
+                  alt={founder.name}
+                  className="w-full h-full rounded-full object-cover shadow-sm transition-transform duration-300 group-hover:scale-105 group-hover:shadow-lg"
+                />
+                <a
+                  href={founder.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`View ${founder.name} LinkedIn profile`}
+                  className="absolute bottom-2 right-2 w-8 h-8 bg-[#0A66C2] rounded-full flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300"
+                >
+                  <Linkedin className="w-4 h-4 text-white" />
                 </a>
               </div>
               <h3 className="font-heading font-semibold text-xl text-foreground mb-1">

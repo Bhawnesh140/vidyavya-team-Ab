@@ -41,6 +41,11 @@ const testimonials = [
 const TestimonialCarousel = () => {
   return (
     <div className="py-16 md:py-24 bg-secondary overflow-hidden">
+      <style>{`
+        .pause-on-hover:hover .testimonial-scroll {
+          animation-play-state: paused;
+        }
+      `}</style>
       <div className="container-custom mb-10">
         <h2 className="font-heading text-3xl md:text-4xl font-semibold text-secondary-foreground text-center mb-4">
           Success Stories
@@ -50,14 +55,14 @@ const TestimonialCarousel = () => {
         </p>
       </div>
 
-      <div className="relative">
+      <div className="relative group pause-on-hover py-4">
         <div className="flex testimonial-scroll">
           {/* First set */}
           <div className="flex gap-6 px-3">
             {testimonials.map((testimonial, index) => (
               <div
                 key={`testimonial-1-${index}`}
-                className="flex-shrink-0 w-[350px] md:w-[400px] bg-card rounded-xl p-6 shadow-card"
+                className="flex-shrink-0 w-[350px] md:w-[400px] bg-card rounded-xl p-6 shadow-card transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-xl"
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
@@ -90,7 +95,7 @@ const TestimonialCarousel = () => {
             {testimonials.map((testimonial, index) => (
               <div
                 key={`testimonial-2-${index}`}
-                className="flex-shrink-0 w-[350px] md:w-[400px] bg-card rounded-xl p-6 shadow-card"
+                className="flex-shrink-0 w-[350px] md:w-[400px] bg-card rounded-xl p-6 shadow-card transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-xl"
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (

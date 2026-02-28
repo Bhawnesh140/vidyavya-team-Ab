@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, Facebook, Twitter, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useRequestCallback } from '@/context/RequestCallbackContext';
 
@@ -44,9 +44,11 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-4">
-              <div className="font-heading font-bold text-2xl text-secondary-foreground">
-                Vidya<span className="text-primary">vya</span>
-              </div>
+              <img
+                src="/logo.png"
+                alt="Vidyavya Logo"
+                className="h-10 md:h-12 w-auto object-contain"
+              />
             </Link>
             <p className="font-heading font-semibold text-secondary-foreground text-lg mb-2">
               Shaping Tomorrow’s Tech Leaders
@@ -124,16 +126,42 @@ const Footer = () => {
 
             {/* Social Links */}
             <div className="flex gap-4 mt-6">
-              {['LinkedIn', 'Twitter', 'Instagram', 'YouTube'].map((social) => (
-                <a
-                  key={social}
-                  href="#"
-                  className="w-9 h-9 rounded-full bg-secondary-foreground/10 flex items-center justify-center text-secondary-foreground/60 hover:bg-primary hover:text-primary-foreground transition-all"
-                  aria-label={social}
-                >
-                  <span className="text-xs font-medium">{social[0]}</span>
-                </a>
-              ))}
+              <a
+                href="https://www.instagram.com/vidyavya_/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Vidyavya Instagram"
+                className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] flex items-center justify-center text-white hover:scale-110 shadow-md hover:shadow-lg transition-all duration-300"
+              >
+                <Instagram className="w-5 h-5" strokeWidth={2} />
+              </a>
+              <a
+                href="https://www.facebook.com/people/Vidyavya/61585982198263/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Vidyavya Facebook"
+                className="w-10 h-10 rounded-full bg-[#1877F2] flex items-center justify-center text-white hover:scale-110 shadow-md hover:shadow-lg transition-all duration-300"
+              >
+                <Facebook className="w-5 h-5" strokeWidth={2} />
+              </a>
+              <a
+                href="https://x.com/Vidyavya_"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Vidyavya X"
+                className="w-10 h-10 rounded-full bg-black flex items-center justify-center text-white hover:scale-110 shadow-md hover:shadow-lg transition-all duration-300"
+              >
+                <Twitter className="w-5 h-5" strokeWidth={2} />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/vidyavya/?viewAsMember=true"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Vidyavya LinkedIn"
+                className="w-10 h-10 rounded-full bg-[#0A66C2] flex items-center justify-center text-white hover:scale-110 shadow-md hover:shadow-lg transition-all duration-300"
+              >
+                <Linkedin className="w-5 h-5" strokeWidth={2} />
+              </a>
             </div>
           </div>
         </div>

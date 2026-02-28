@@ -1,51 +1,65 @@
 import { useEffect } from 'react';
 
-const partnerLogos = [
-  'TechCorp',
-  'DataFlow',
-  'CloudBase',
-  'AI Labs',
-  'DevStudio',
-  'InnoTech',
-  'CodeWorks',
-  'ByteForce',
-];
-
 const LogoStrip = () => {
+  // Generate an array of image paths from 1 to 5
+  const logos = Array.from({ length: 5 }, (_, i) => `/company-logos/${i + 1}.png`);
+
   return (
-    <div className="py-12 bg-card border-y border-border overflow-hidden">
-      <div className="container-custom mb-6">
+    <div className="py-4 bg-card border-y border-border overflow-hidden">
+      <div className="container-custom mb-2">
         <p className="font-accent text-base text-muted-foreground text-center uppercase tracking-wider">
           Trusted by Leading Companies
         </p>
       </div>
-      <div className="relative">
-        <div className="flex logo-scroll">
+      <div className="relative overflow-hidden py-0">
+        <div className="flex testimonial-scroll w-max">
           {/* First set of logos */}
-          <div className="flex gap-12 items-center px-6">
-            {partnerLogos.map((logo, index) => (
-              <div
-                key={`logo-1-${index}`}
-                className="flex-shrink-0 h-12 px-8 flex items-center justify-center bg-muted rounded-lg"
-              >
-                <span className="font-heading font-semibold text-muted-foreground/60 whitespace-nowrap">
-                  {logo}
-                </span>
-              </div>
-            ))}
+          <div className="flex gap-4 md:gap-8 items-center px-6">
+            {logos.map((src, index) => {
+              // Increase size for Logo 2 (index 1) and Logo 4 (index 3) by 6 tailwind steps over the base
+              const isLarger = index === 1 || index === 3;
+              const imgSizeClass = isLarger
+                ? "h-36 md:h-40 w-60 md:w-64" // Base + 6
+                : "h-24 md:h-28 w-48 md:w-56"; // Base
+
+              return (
+                <div
+                  key={`logo-img-1-${index}`}
+                  className="flex-shrink-0 h-36 md:h-40 w-60 md:w-64 flex items-center justify-center p-0 transition-transform"
+                >
+                  <img
+                    src={src}
+                    alt={`Company logo ${index + 1}`}
+                    loading="lazy"
+                    className={`${imgSizeClass} object-contain opacity-70 hover:opacity-100 hover:scale-110 hover:-translate-y-1 hover:drop-shadow-lg transition-all duration-300`}
+                  />
+                </div>
+              );
+            })}
           </div>
           {/* Duplicate for seamless loop */}
-          <div className="flex gap-12 items-center px-6">
-            {partnerLogos.map((logo, index) => (
-              <div
-                key={`logo-2-${index}`}
-                className="flex-shrink-0 h-12 px-8 flex items-center justify-center bg-muted rounded-lg"
-              >
-                <span className="font-heading font-semibold text-muted-foreground/60 whitespace-nowrap">
-                  {logo}
-                </span>
-              </div>
-            ))}
+          <div className="flex gap-4 md:gap-8 items-center px-6">
+            {logos.map((src, index) => {
+              // Same sizing logic for the duplicate loop
+              const isLarger = index === 1 || index === 3;
+              const imgSizeClass = isLarger
+                ? "h-36 md:h-40 w-60 md:w-64" // Base + 6
+                : "h-24 md:h-28 w-48 md:w-56"; // Base
+
+              return (
+                <div
+                  key={`logo-img-2-${index}`}
+                  className="flex-shrink-0 h-36 md:h-40 w-60 md:w-64 flex items-center justify-center p-0 transition-transform"
+                >
+                  <img
+                    src={src}
+                    alt={`Company logo ${index + 1}`}
+                    loading="lazy"
+                    className={`${imgSizeClass} object-contain opacity-70 hover:opacity-100 hover:scale-110 hover:-translate-y-1 hover:drop-shadow-lg transition-all duration-300`}
+                  />
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

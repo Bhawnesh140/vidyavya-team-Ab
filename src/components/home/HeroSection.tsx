@@ -8,7 +8,7 @@ import GridBackground from '@/components/ui/GridBackground';
 const HeroSection = () => {
   const { openModal } = useRequestCallback();
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-b from-cream to-background">
+    <section className="relative min-h-[90vh] flex flex-col pt-[40px] md:pt-[80px] pb-16 md:pb-24 overflow-hidden bg-gradient-to-b from-cream to-background">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-20 left-10 w-72 h-72 bg-accent/40 rounded-full blur-3xl" />
@@ -18,7 +18,7 @@ const HeroSection = () => {
       {/* 3D Grid Background */}
       <GridBackground className="z-0 opacity-40 bottom-0 h-3/4" />
 
-      <div className="container-custom relative z-10 py-20">
+      <div className="container-custom relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
           <motion.div

@@ -31,11 +31,14 @@ const HeroSection = () => {
               Shaping Tomorrow’s <br />
               <span className="text-primary">Tech Leaders</span>
             </h1>
-            <p className="font-body text-lg md:text-xl text-muted-foreground mb-8 max-w-xl leading-relaxed">
-              Industry-led training in Data Engineering and AI/ML Engineering, integrated with a 6-month paid internship.
-              <br className="hidden md:block" />
-              Learn by working inside real tech companies through live projects, expert mentorship, and a work-integrated learning model.
-            </p>
+            <div className="font-body text-lg md:text-xl text-muted-foreground mb-8 max-w-xl leading-relaxed space-y-4">
+              <p>
+                Industry-led training in Data Engineering and AI/ML Engineering, integrated with a 6-month paid internship.
+              </p>
+              <p>
+                Learn by working inside real tech companies through live projects, expert mentorship, and a work-integrated learning model.
+              </p>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Button variant="hero" size="xl" onClick={openModal}>

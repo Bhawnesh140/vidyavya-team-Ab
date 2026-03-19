@@ -107,10 +107,10 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <span className="inline-block font-accent text-base font-medium text-primary uppercase tracking-wider mb-4">
+            <span className="inline-block font-accent text-xl font-medium text-primary uppercase tracking-wider mb-4">
               Get in Touch
             </span>
-            <h1 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h1 className="font-heading text-[1.7rem] md:text-4xl font-bold text-foreground mb-6">
               Let's Start a <span className="text-primary">Conversation</span>
             </h1>
             <p className="font-body text-lg text-muted-foreground leading-relaxed">

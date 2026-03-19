@@ -7,7 +7,7 @@ const LogoStrip = () => {
   return (
     <div className="py-4 bg-card border-y border-border overflow-hidden">
       <div className="container-custom mb-2">
-        <p className="font-accent text-base text-muted-foreground text-center uppercase tracking-wider">
+        <p className="font-accent text-xl text-muted-foreground text-center uppercase tracking-wider">
           Trusted by Leading Companies
         </p>
       </div>

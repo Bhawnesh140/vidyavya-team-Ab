@@ -28,10 +28,10 @@ const StudentLife = () => {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <span className="inline-block font-accent text-base font-medium text-primary uppercase tracking-wider mb-4">
+            <span className="inline-block font-accent text-xl font-medium text-primary uppercase tracking-wider mb-4">
               Student Life
             </span>
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            <h1 className="font-heading text-[1.7rem] md:text-4xl lg:text-[2.8rem] font-bold text-foreground mb-6">
               Where Learning <span className="text-primary">Meets Growth</span>
             </h1>
             <p className="font-body text-lg md:text-xl text-muted-foreground leading-relaxed">

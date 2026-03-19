@@ -24,11 +24,11 @@ const SectionHeader = ({
       )}
     >
       {label && (
-        <span className="inline-block font-accent text-base font-bold text-primary uppercase tracking-wider mb-3">
+        <span className="inline-block font-accent text-xl font-bold text-primary uppercase tracking-wider mb-3">
           {label}
         </span>
       )}
-      <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-4 text-balance">
+      <h2 className="font-heading text-[1.4rem] md:text-[1.7rem] lg:text-4xl font-semibold text-foreground mb-4 text-balance">
         {title}
       </h2>
       {subtitle && (

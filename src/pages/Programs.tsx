@@ -104,10 +104,10 @@ const Programs = () => {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <span className="inline-block font-accent text-base font-medium text-primary uppercase tracking-wider mb-4">
+            <span className="inline-block font-accent text-xl font-medium text-primary uppercase tracking-wider mb-4">
               Our Programs
             </span>
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            <h1 className="font-heading text-[1.7rem] md:text-4xl lg:text-[2.8rem] font-bold text-foreground mb-6">
               Job-Focused <span className="text-primary">Tech Programs</span>
             </h1>
             <p className="font-body text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">

@@ -43,18 +43,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link to="/" className="inline-block mb-4">
+            <Link to="/" className="inline-block mb-2">
               <img
                 src="/logo.png"
                 alt="Vidyavya Logo"
                 className="h-10 md:h-12 w-auto object-contain"
               />
             </Link>
-            <p className="font-heading font-semibold text-secondary-foreground text-lg mb-2">
+            <p className="font-heading font-semibold text-secondary-foreground text-lg mb-0">
               Shaping Tomorrow’s Tech Leaders
-            </p>
-            <p className="font-body text-secondary-foreground/70 text-sm leading-relaxed mb-4">
-              Industry-led training in Data Engineering and AI/ML Engineering, integrated with a 6-month paid internship.
             </p>
           </div>
 

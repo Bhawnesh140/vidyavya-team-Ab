@@ -76,9 +76,13 @@ const StudentLife = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="bg-secondary/30 rounded-2xl p-8 flex items-center justify-center min-h-[300px]"
+            className="w-full flex items-center justify-center"
           >
-            <Users className="w-24 h-24 text-primary/40" />
+            <img
+              src="/student-life/1.png"
+              alt="Learn Together. Grow Faster."
+              className="w-full h-[300px] md:h-[400px] object-cover rounded-xl shadow-sm"
+            />
           </motion.div>
         </div>
       </Section>
@@ -91,9 +95,13 @@ const StudentLife = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="order-2 lg:order-1 bg-white rounded-2xl p-8 flex items-center justify-center min-h-[300px] shadow-sm"
+            className="order-2 lg:order-1 w-full flex items-center justify-center"
           >
-            <Building2 className="w-24 h-24 text-primary/40" />
+            <img
+              src="/student-life/2.png"
+              alt="Built Like a Startup Office"
+              className="w-full h-[300px] md:h-[400px] object-cover rounded-xl shadow-sm"
+            />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -158,9 +166,13 @@ const StudentLife = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="bg-secondary/30 rounded-2xl p-8 flex items-center justify-center min-h-[300px]"
+            className="w-full flex items-center justify-center"
           >
-            <MapPin className="w-24 h-24 text-primary/40" />
+            <img
+              src="/student-life/3.png"
+              alt="Learn from a Tech Hub"
+              className="w-full h-[300px] md:h-[400px] object-cover rounded-xl shadow-sm"
+            />
           </motion.div>
         </div>
       </Section>
@@ -173,9 +185,13 @@ const StudentLife = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="order-2 lg:order-1 bg-white rounded-2xl p-8 flex items-center justify-center min-h-[300px] shadow-sm"
+            className="order-2 lg:order-1 w-full flex items-center justify-center"
           >
-            <UserCheck className="w-24 h-24 text-primary/40" />
+            <img
+              src="/student-life/4.png"
+              alt="Beyond Technical Skills"
+              className="w-full h-[300px] md:h-[400px] object-cover rounded-xl shadow-sm"
+            />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 20 }}

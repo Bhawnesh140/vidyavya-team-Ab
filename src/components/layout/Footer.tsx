@@ -40,7 +40,7 @@ const Footer = () => {
 
       {/* Main Footer */}
       <div className="container-custom py-12 border-t border-secondary-foreground/10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.5fr_0.7fr_0.7fr_1.1fr] gap-8 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-2">

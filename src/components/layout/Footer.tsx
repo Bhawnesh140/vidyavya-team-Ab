@@ -98,25 +98,25 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <span className="font-body text-sm text-secondary-foreground/80">
-                  Pune, Maharashtra, India
+                  7th Floor, Kumar Pride Senate-1, Senapati Bapat Road, Shivajinagar, Pune, Maharashtra-411016.
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0" />
                 <a
-                  href="mailto:hello@vidyavya.com"
+                  href="mailto:contact@vidyavya.com"
                   className="font-body text-sm text-secondary-foreground/80 hover:text-primary transition-colors"
                 >
-                  hello@vidyavya.com
+                  contact@vidyavya.com
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary flex-shrink-0" />
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+917722077330"
                   className="font-body text-sm text-secondary-foreground/80 hover:text-primary transition-colors"
                 >
-                  +91 98765 43210
+                  +91 77220 77330
                 </a>
               </li>
             </ul>

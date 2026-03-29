@@ -64,7 +64,7 @@ const Contact = () => {
     setIsSubmitted(true);
     toast({
       title: "Request Submitted!",
-      description: "We'll get back to you within 24 hours.",
+      description: "We'll get in touch with you shortly.",
     });
   };
 
@@ -85,7 +85,7 @@ const Contact = () => {
               Thank You!
             </h1>
             <p className="font-body text-lg text-muted-foreground mb-8 max-w-md mx-auto">
-              Your callback request has been submitted. Our team will reach out to you within 24 hours.
+              Your callback request has been submitted. Our team will get in touch with you shortly.
             </p>
             <Button variant="cta" onClick={() => setIsSubmitted(false)}>
               Submit Another Request
@@ -107,15 +107,13 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <span className="inline-block font-accent text-xl font-medium text-primary uppercase tracking-wider mb-4">
-              Get in Touch
-            </span>
             <h1 className="font-heading text-[1.7rem] md:text-4xl font-bold text-foreground mb-6">
               Let's Start a <span className="text-primary">Conversation</span>
             </h1>
             <p className="font-body text-lg text-muted-foreground leading-relaxed">
               Have questions about our programs? Ready to start your career transformation?
-              Fill out the form and our team will get back to you within 24 hours.
+              <br />
+              Fill out the form and our team will get in touch with you shortly.
             </p>
           </motion.div>
         </div>

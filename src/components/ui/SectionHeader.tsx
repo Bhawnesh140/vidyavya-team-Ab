@@ -28,7 +28,7 @@ const SectionHeader = ({
           {label}
         </span>
       )}
-      <h2 className="font-heading text-[1.4rem] md:text-[1.7rem] lg:text-4xl font-semibold text-foreground mb-4 text-balance">
+      <h2 className={cn("font-heading text-[1.4rem] md:text-[1.7rem] lg:text-4xl font-semibold text-foreground text-balance", subtitle ? "mb-4" : "mb-0")}>
         {title}
       </h2>
       {subtitle && (

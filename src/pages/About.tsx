@@ -71,7 +71,7 @@ const About = () => {
               label="Our Story"
               title="Born from Industry Experience"
               align="left"
-              className="mb-6"
+              className="mb-2 md:mb-2"
             />
             <div className="space-y-4 font-body text-muted-foreground leading-relaxed">
               <p>

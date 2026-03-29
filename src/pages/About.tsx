@@ -53,12 +53,12 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <span className="inline-block font-accent text-xl font-bold text-primary uppercase tracking-wider mb-4">
-              Redefining How Tech Careers Are Built
-            </span>
-            <h1 className="font-heading text-lg md:text-[1.4rem] lg:text-[1.7rem] font-medium text-foreground mb-6">
-              Vidyavya was created by founders running technology companies to bridge the gap between academic learning and real industry needs.
+            <h1 className="font-heading text-[1.7rem] md:text-4xl lg:text-[2.8rem] font-bold text-foreground mb-4">
+              Redefining How <span className="text-primary">Tech Careers Are Built</span>
             </h1>
+            <p className="font-body text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
+              Vidyavya was created by founders running technology companies to bridge the gap between academic learning and real industry needs.
+            </p>
           </motion.div>
         </div>
       </section>

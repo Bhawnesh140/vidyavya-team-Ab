@@ -203,7 +203,7 @@ const About = () => {
           <SectionHeader
             label="Our Promise"
             title="Preparation is Our Obsession"
-            className="text-secondary-foreground [&_span]:text-primary [&_h2]:text-secondary-foreground [&_p]:text-secondary-foreground/80"
+            className="mb-6 md:mb-8 text-secondary-foreground [&_span]:text-primary [&_h2]:text-secondary-foreground [&_p]:text-secondary-foreground/80"
           />
           <div className="space-y-6 font-body text-secondary-foreground/90 leading-relaxed">
             <p>

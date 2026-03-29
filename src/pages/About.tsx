@@ -65,7 +65,7 @@ const About = () => {
 
       {/* Our Story */}
       <Section className="py-8 md:py-12">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-stretch">
           <div>
             <SectionHeader
               label="Our Story"
@@ -85,36 +85,30 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="relative">
-            <div className="bg-secondary rounded-2xl p-8 text-secondary-foreground">
+          <div className="relative h-full">
+            <div className="bg-secondary rounded-2xl p-8 text-secondary-foreground h-full flex flex-col justify-center">
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/20 rounded-full" />
               <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-accent/50 rounded-full" />
               <div className="relative space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-secondary-foreground/10 rounded-lg flex items-center justify-center">
-                    <Eye className="w-6 h-6 text-secondary-foreground" />
+                <div>
+                  <div className="flex items-center gap-3 mb-2">
+                    <Eye className="w-6 h-6 text-secondary-foreground shrink-0" />
+                    <h4 className="font-heading font-bold text-xl">Our Vision</h4>
                   </div>
-                  <div>
-                    <h4 className="font-heading font-semibold text-lg">Our Vision</h4>
-                    <p className="font-body text-sm text-secondary-foreground/80">
-                      To Build the Future of Tech, One Engineer at a Time
-                      <br />
-                      We empower motivated learners through practical experience and aim to become India’s leading career accelerator for Data and AI, creating engineers who drive the next wave of technological innovation.
-                    </p>
-                  </div>
+                  <p className="font-body text-sm text-secondary-foreground/80">
+                    <span className="block font-bold mb-1">To Build the Future of Tech, One Engineer at a Time</span>
+                    We empower motivated learners through practical experience and aim to become India’s leading career accelerator for Data and AI, creating engineers who drive the next wave of technological innovation.
+                  </p>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-secondary-foreground/10 rounded-lg flex items-center justify-center">
-                    <Target className="w-6 h-6 text-secondary-foreground" />
+                <div>
+                  <div className="flex items-center gap-3 mb-2">
+                    <Target className="w-6 h-6 text-secondary-foreground shrink-0" />
+                    <h4 className="font-heading font-bold text-xl">Our Mission</h4>
                   </div>
-                  <div>
-                    <h4 className="font-heading font-semibold text-lg">Our Mission</h4>
-                    <p className="font-body text-sm text-secondary-foreground/80">
-                      To Turn Learners into Leaders
-                      <br />
-                      We train students in Data Engineering and AI/ML through a work-integrated model where they learn from industry professionals, work on live projects, and graduate confident for modern tech roles.
-                    </p>
-                  </div>
+                  <p className="font-body text-sm text-secondary-foreground/80">
+                    <span className="block font-bold mb-1">To Turn Learners into Leaders</span>
+                    We train students in Data Engineering and AI/ML through a work-integrated model where they learn from industry professionals, work on real projects, and graduate confident for modern tech roles.
+                  </p>
                 </div>
               </div>
             </div>

@@ -131,22 +131,16 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`relative p-6 rounded-xl shadow-card transition-all ${item.title === 'Build'
-                ? 'bg-[#FF5757] text-white'
-                : 'bg-card text-foreground'
-                }`}
+              className="relative p-6 rounded-xl shadow-card transition-all bg-card text-foreground"
             >
-              <span className={`absolute -top-3 -left-3 font-heading text-5xl font-bold ${item.title === 'Build' ? 'text-white/20' : 'text-primary/20'
-                }`}>
+              <span className="absolute -top-3 -left-3 font-heading text-5xl font-bold text-primary/40">
                 {item.step}
               </span>
               <div className="relative pt-4">
-                <h3 className={`font-heading font-semibold text-xl mb-3 ${item.title === 'Build' ? 'text-white' : 'text-foreground'
-                  }`}>
+                <h3 className="font-heading font-semibold text-xl mb-3 text-foreground">
                   {item.title}
                 </h3>
-                <p className={`font-body text-sm leading-relaxed ${item.title === 'Build' ? 'text-white/90' : 'text-muted-foreground'
-                  }`}>
+                <p className="font-body text-sm leading-relaxed text-muted-foreground">
                   {item.description}
                 </p>
               </div>

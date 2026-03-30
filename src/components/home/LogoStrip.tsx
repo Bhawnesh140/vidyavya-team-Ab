@@ -19,13 +19,13 @@ const LogoStrip = () => {
               // Increase size for Logo 2 (index 1) and Logo 4 (index 3) by 6 tailwind steps over the base
               const isLarger = index === 1 || index === 3;
               const imgSizeClass = isLarger
-                ? "h-40 md:h-48 w-72 md:w-80" // Base + 6 equivalent (scaled up by ~15-20%)
-                : "h-28 md:h-32 w-56 md:w-64"; // Base (scaled up by ~15-20%)
+                ? "h-44 md:h-52 w-80 md:w-96" // Scaled up even more
+                : "h-32 md:h-36 w-64 md:w-72"; // Scaled up base
 
               return (
                 <div
                   key={`logo-img-1-${index}`}
-                  className="flex-shrink-0 h-40 md:h-48 w-72 md:w-80 flex items-center justify-center p-0 transition-transform"
+                  className="flex-shrink-0 h-44 md:h-52 w-80 md:w-96 flex items-center justify-center p-0 transition-transform"
                 >
                   <img
                     src={src}
@@ -43,13 +43,13 @@ const LogoStrip = () => {
               // Same sizing logic for the duplicate loop
               const isLarger = index === 1 || index === 3;
               const imgSizeClass = isLarger
-                ? "h-40 md:h-48 w-72 md:w-80" // Base + 6 equivalent
-                : "h-28 md:h-32 w-56 md:w-64"; // Base
+                ? "h-44 md:h-52 w-80 md:w-96"
+                : "h-32 md:h-36 w-64 md:w-72";
 
               return (
                 <div
                   key={`logo-img-2-${index}`}
-                  className="flex-shrink-0 h-40 md:h-48 w-72 md:w-80 flex items-center justify-center p-0 transition-transform"
+                  className="flex-shrink-0 h-44 md:h-52 w-80 md:w-96 flex items-center justify-center p-0 transition-transform"
                 >
                   <img
                     src={src}

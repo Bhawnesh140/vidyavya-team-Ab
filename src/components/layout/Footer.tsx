@@ -128,36 +128,36 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Visit Vidyavya Instagram"
-                className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] flex items-center justify-center text-white hover:scale-110 shadow-md hover:shadow-lg transition-all duration-300"
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/90 hover:text-white hover:border-white/60 hover:scale-110 transition-all duration-300 shadow-sm"
               >
-                <Instagram className="w-5 h-5" strokeWidth={2} />
+                <Instagram className="w-5 h-5" strokeWidth={1.5} />
               </a>
               <a
                 href="https://www.facebook.com/people/Vidyavya/61585982198263/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Visit Vidyavya Facebook"
-                className="w-10 h-10 rounded-full bg-[#1877F2] flex items-center justify-center text-white hover:scale-110 shadow-md hover:shadow-lg transition-all duration-300"
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/90 hover:text-white hover:border-white/60 hover:scale-110 transition-all duration-300 shadow-sm"
               >
-                <Facebook className="w-5 h-5" strokeWidth={2} />
+                <Facebook className="w-5 h-5" strokeWidth={1.5} />
               </a>
               <a
                 href="https://x.com/Vidyavya_"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Visit Vidyavya X"
-                className="w-10 h-10 rounded-full bg-black flex items-center justify-center text-white hover:scale-110 shadow-md hover:shadow-lg transition-all duration-300"
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/90 hover:text-white hover:border-white/60 hover:scale-110 transition-all duration-300 shadow-sm"
               >
-                <Twitter className="w-5 h-5" strokeWidth={2} />
+                <Twitter className="w-5 h-5" strokeWidth={1.5} />
               </a>
               <a
                 href="https://www.linkedin.com/company/vidyavya/?viewAsMember=true"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Visit Vidyavya LinkedIn"
-                className="w-10 h-10 rounded-full bg-[#0A66C2] flex items-center justify-center text-white hover:scale-110 shadow-md hover:shadow-lg transition-all duration-300"
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/90 hover:text-white hover:border-white/60 hover:scale-110 transition-all duration-300 shadow-sm"
               >
-                <Linkedin className="w-5 h-5" strokeWidth={2} />
+                <Linkedin className="w-5 h-5" strokeWidth={1.5} />
               </a>
             </div>
           </div>

@@ -178,9 +178,9 @@ const About = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`View ${founder.name} LinkedIn profile`}
-                  className="absolute bottom-2 right-2 w-8 h-8 bg-[#0A66C2] rounded-full flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300"
+                  className="absolute bottom-2 right-2 w-8 h-8 bg-black/20 backdrop-blur-sm border border-white/30 rounded-full flex items-center justify-center shadow-md hover:bg-black/40 hover:scale-110 transition-all duration-300"
                 >
-                  <Linkedin className="w-4 h-4 text-white" />
+                  <Linkedin className="w-4 h-4 text-white" strokeWidth={2} />
                 </a>
               </div>
               <h3 className="font-heading font-semibold text-xl text-foreground mb-1">

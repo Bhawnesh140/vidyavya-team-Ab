@@ -236,7 +236,9 @@ const Contact = () => {
                 Get in Touch
               </h2>
               <p className="font-body text-secondary-foreground/80 mb-8">
-                Have questions? We're here to help. Reach out to us through any of the channels below.
+                Have questions? We're here to help.
+                <br />
+                Reach out to us through any of the channels below.
               </p>
 
               <div className="space-y-6">
@@ -247,7 +249,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-heading font-semibold mb-1">Location</h3>
                     <p className="font-body text-sm text-secondary-foreground/80">
-                      Pune, Maharashtra, India
+                      7th Floor, Kumar Pride Senate-1, Senapati Bapat Road, Shivajinagar, Pune, Maharashtra-411016.
                     </p>
                   </div>
                 </div>
@@ -259,10 +261,10 @@ const Contact = () => {
                   <div>
                     <h3 className="font-heading font-semibold mb-1">Email</h3>
                     <a
-                      href="mailto:hello@vidyavya.com"
+                      href="mailto:contact@vidyavya.com"
                       className="font-body text-sm text-secondary-foreground/80 hover:text-primary transition-colors"
                     >
-                      hello@vidyavya.com
+                      contact@vidyavya.com
                     </a>
                   </div>
                 </div>
@@ -274,10 +276,10 @@ const Contact = () => {
                   <div>
                     <h3 className="font-heading font-semibold mb-1">Phone</h3>
                     <a
-                      href="tel:+919876543210"
+                      href="tel:+917722077330"
                       className="font-body text-sm text-secondary-foreground/80 hover:text-primary transition-colors"
                     >
-                      +91 98765 43210
+                      +91 77220 77330
                     </a>
                   </div>
                 </div>

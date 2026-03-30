@@ -82,21 +82,18 @@ const Partner = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="pt-12 pb-16 md:pt-20 md:pb-24 bg-gradient-to-b from-cream to-background">
+      <section className="pt-12 pb-8 md:pt-20 md:pb-12 bg-gradient-to-b from-cream to-background">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto text-center"
+            className="max-w-5xl mx-auto text-center"
           >
-            <span className="inline-block font-accent text-xl font-medium text-primary uppercase tracking-wider mb-4">
-              Partner With Us
-            </span>
             <h1 className="font-heading text-[1.7rem] md:text-4xl lg:text-[2.8rem] font-bold text-foreground mb-6">
               Building the <span className="text-primary">Future, Together</span>
             </h1>
-            <p className="font-body text-lg md:text-xl text-muted-foreground leading-relaxed">
+            <p className="font-body text-lg md:text-xl text-muted-foreground leading-relaxed lg:whitespace-nowrap">
               We partner with companies and colleges committed to developing skilled, job-ready tech talent.
             </p>
           </motion.div>

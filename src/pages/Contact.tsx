@@ -131,7 +131,7 @@ const Contact = () => {
           >
             <div className="bg-card rounded-2xl p-8 shadow-card">
               <h2 className="font-heading text-2xl font-semibold text-foreground mb-6">
-                Request Callback
+                Talk to our team
               </h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
@@ -195,7 +195,7 @@ const Contact = () => {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Tell us about your goals and what you're looking for"
+                    placeholder="Tell us about what you’re looking for"
                     rows={5}
                     className={`font-body resize-none ${errors.message ? 'border-destructive' : ''}`}
                   />
@@ -214,7 +214,7 @@ const Contact = () => {
                     'Submitting...'
                   ) : (
                     <>
-                      Request Callback
+                      Submit
                       <Send className="w-4 h-4 ml-2" />
                     </>
                   )}

@@ -29,7 +29,7 @@ const Footer = () => {
           <h3 className="font-heading text-2xl md:text-3xl font-semibold text-foreground mb-4">
             Ready to Start Your Career Journey with Vidyavya?
           </h3>
-          <p className="font-body text-muted-foreground mb-6 max-w-2xl mx-auto">
+          <p className="font-body text-muted-foreground mb-6 max-w-4xl mx-auto lg:whitespace-nowrap">
             Speak to our team, understand the program, and see if Vidyavya is the right fit for your goal.
           </p>
           <Button variant="cta" size="xl" onClick={openModal}>

@@ -162,7 +162,7 @@ const Partner = () => {
                       <h4 className="font-heading font-semibold text-foreground mb-1">
                         {item.title}
                       </h4>
-                      <p className="font-body text-sm text-muted-foreground">
+                      <p className="font-body text-sm text-muted-foreground lg:whitespace-nowrap">
                         {item.description}
                       </p>
                     </div>
@@ -238,7 +238,7 @@ const Partner = () => {
                       <h4 className="font-heading font-semibold text-foreground mb-1">
                         {item.title}
                       </h4>
-                      <p className="font-body text-sm text-muted-foreground">
+                      <p className="font-body text-sm text-muted-foreground lg:whitespace-nowrap">
                         {item.description}
                       </p>
                     </div>

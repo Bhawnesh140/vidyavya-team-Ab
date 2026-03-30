@@ -37,7 +37,7 @@ const formSchema = z.object({
     lastName: z.string().trim().min(1, 'Last Name is required'),
     email: z.string().trim().min(1, 'Email Address is required').regex(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Please enter a valid email address.'),
     phone: z.string().trim().regex(/^[0-9]{10}$/, 'Phone number must be exactly 10 digits.'),
-    degree: z.string().min(1, 'Please select your degree'),
+    degree: z.string().min(1, 'Please select your qualification'),
     description: z.string().min(1, 'Please select an option'),
 });
 
@@ -102,10 +102,10 @@ const RequestCallbackModal = () => {
             <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
                 <DialogHeader>
                     <DialogTitle className="text-xl md:text-2xl text-center font-heading text-foreground">
-                        Request a Call Back
+                        Request a CallBack
                     </DialogTitle>
                     <DialogDescription className="text-center font-body text-muted-foreground mt-2">
-                        Want to speak to our team and understand if Vidyavya is right for you?
+                        Want to understand if Vidyavya is right for you? <br />
                         Share your details and we'll call you back shortly.
                     </DialogDescription>
                 </DialogHeader>
@@ -183,11 +183,11 @@ const RequestCallbackModal = () => {
                             name="degree"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel className="font-body text-foreground">Degree*</FormLabel>
+                                    <FormLabel className="font-body text-foreground">Qualification*</FormLabel>
                                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                                         <FormControl>
                                             <SelectTrigger>
-                                                <SelectValue placeholder="Select Degree" />
+                                                <SelectValue placeholder="Select Qualification" />
                                             </SelectTrigger>
                                         </FormControl>
                                         <SelectContent>

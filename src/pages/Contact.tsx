@@ -127,13 +127,14 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-3"
+            className="lg:col-span-3 h-full"
           >
-            <div className="bg-card rounded-2xl p-8 shadow-card">
+            <div className="bg-card rounded-2xl p-8 shadow-card h-full flex flex-col">
               <h2 className="font-heading text-2xl font-semibold text-foreground mb-6">
                 Talk to our team
               </h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6 flex-grow flex flex-col">
+                <div className="space-y-6 flex-grow">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="name" className="font-body font-medium">
@@ -203,11 +204,12 @@ const Contact = () => {
                     <p className="text-xs text-destructive font-body">{errors.message}</p>
                   )}
                 </div>
+                </div>
                 <Button
                   type="submit"
                   variant="cta"
                   size="lg"
-                  className="w-full"
+                  className="w-full mt-8"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
@@ -229,7 +231,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-2"
+            className="lg:col-span-2 h-full"
           >
             <div className="bg-secondary rounded-2xl p-8 text-secondary-foreground h-full">
               <h2 className="font-heading text-2xl font-semibold mb-6">

@@ -3,10 +3,10 @@ import Layout from '@/components/layout/Layout';
 import Section from '@/components/ui/Section';
 import SectionHeader from '@/components/ui/SectionHeader';
 import { motion } from 'framer-motion';
-import { 
-  Settings, 
-  Hammer, 
-  Telescope, 
+import {
+  Settings,
+  Hammer,
+  Telescope,
   Target,
   CheckCircle2,
   Calendar,
@@ -54,22 +54,22 @@ const DataEngineering = () => {
         </div>
 
         <div className="container-custom relative z-10">
-          <motion.div 
+          <motion.div
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
             className="max-w-4xl"
           >
             <motion.h1 variants={fadeIn} className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8">
-              Data<br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-[#A8D8EA]">Engineering</span><br/>
+              Data<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-[#A8D8EA]">Engineering</span><br />
               Career Program
             </motion.h1>
-            
+
             <motion.p variants={fadeIn} className="font-body text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl mb-10">
               Build the modern data platforms, pipelines, and analytics infrastructure that power today's technology companies — from e-commerce to fintech and beyond.
             </motion.p>
-            
+
             <motion.div variants={fadeIn} className="flex flex-wrap gap-4 mb-10">
               <div className="px-5 py-2.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm font-semibold flex items-center">
                 <Calendar className="w-4 h-4 mr-2 text-[#A8D8EA]" />
@@ -122,7 +122,7 @@ const DataEngineering = () => {
       {/* Highlights Section */}
       <section className="pt-6 pb-2 md:pt-10 md:pb-6 bg-background relative z-10">
         <div className="container-custom">
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
@@ -138,7 +138,7 @@ const DataEngineering = () => {
               { icon: Telescope, title: "Production Thinking", desc: "Design systems with resilience, observability, and scalability from day one.", bg: "bg-slate-50 border-slate-100" },
               { icon: Target, title: "Career Readiness", desc: "Graduate with a portfolio, technical depth, and interview confidence.", bg: "bg-[#A8D8EA]/5 border-[#A8D8EA]/20" }
             ].map((item, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 variants={{
                   hidden: { opacity: 0, y: 30 },
@@ -159,19 +159,19 @@ const DataEngineering = () => {
 
       {/* Curriculum Section - Card Based Layout */}
       <Section className="bg-background">
-        <SectionHeader 
+        <SectionHeader
           label="Curriculum"
           title="Six Months. Six Engineering Milestones."
-          subtitle="Each month builds on the last — starting with engineering foundations and culminating in a production-grade capstone that demonstrates full-stack data platform skills."
+          subtitle="Each month builds on the last - starting with engineering foundations and culminating in a production-grade capstone that demonstrates full-stack data platform skills."
         />
-        
+
         <div className="max-w-5xl mx-auto space-y-6 mt-16 md:mt-24">
           {[
             {
               month: "Month 1",
               title: "Engineering Foundations",
               topics: [
-                "Intro to Data Engineering — roles, data lifecycles & architecture",
+                "Intro to Data Engineering - roles, data lifecycles & architecture",
                 "Linux & Shell Scripting — file systems, bash, cron & automation",
                 "Git & GitHub — version control, branching & pull requests",
                 "Python for data ingestion & API interaction",
@@ -238,7 +238,7 @@ const DataEngineering = () => {
               ]
             }
           ].map((item, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -249,7 +249,7 @@ const DataEngineering = () => {
               <div className="bg-[#34495E] text-white p-8 md:p-10 md:w-1/3 shrink-0 flex flex-col justify-center relative overflow-hidden">
                 <span className="font-accent text-sm font-semibold tracking-widest uppercase text-[#A8D8EA] mb-3 relative z-10">{item.month}</span>
                 <h3 className="font-heading text-2xl md:text-3xl font-bold leading-snug relative z-10">{item.title}</h3>
-                
+
                 {/* Abstract shape */}
                 <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-white opacity-5 rounded-full blur-[20px]" />
               </div>
@@ -283,13 +283,13 @@ const DataEngineering = () => {
 
         <div className="container-custom relative z-10">
           <div className="max-w-3xl mx-auto text-center mb-16 md:mb-24">
-            <motion.span initial={{opacity:0}} whileInView={{opacity:1}} viewport={{once:true}} className="inline-block font-accent text-sm font-semibold tracking-widest text-[#A8D8EA] uppercase mb-4">
+            <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="inline-block font-accent text-sm font-semibold tracking-widest text-[#A8D8EA] uppercase mb-4">
               Final Capstone Project
             </motion.span>
-            <motion.h2 initial={{opacity:0, y:20}} whileInView={{opacity:1, y:0}} viewport={{once:true}} className="font-heading text-4xl md:text-6xl font-bold mb-6">
+            <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="font-heading text-4xl md:text-6xl font-bold mb-6">
               Build a Complete Data Platform
             </motion.h2>
-            <motion.p initial={{opacity:0, y:20}} whileInView={{opacity:1, y:0}} viewport={{once:true}} className="font-body text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto">
+            <motion.p initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="font-body text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl mx-auto">
               Students design and build a production-grade data platform — demonstrating mastery of the full data engineering stack. This becomes your most powerful portfolio piece when entering the job market.
             </motion.p>
           </div>
@@ -304,7 +304,7 @@ const DataEngineering = () => {
                 "A live, interactive analytics dashboard",
                 "Documented architecture with production observability"
               ].map((item, idx) => (
-                <motion.div 
+                <motion.div
                   key={idx}
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -325,11 +325,11 @@ const DataEngineering = () => {
 
       {/* Tools & Technologies */}
       <Section className="bg-white">
-        <SectionHeader 
+        <SectionHeader
           label="What You'll Work With"
           title="Tools & Technologies"
         />
-        <motion.div 
+        <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
@@ -347,7 +347,7 @@ const DataEngineering = () => {
             { icon: BarChart, title: "Analytics & Visualization", p: "Power BI Tableau Data Warehousing Dimensional Modeling", bg: "bg-slate-50 border-slate-100" },
             { icon: GitBranch, title: "Engineering Practices", p: "Git / GitHub Data Quality Testing Monitoring & Observability", bg: "bg-[#A8D8EA]/5 border-[#A8D8EA]/20" }
           ].map((item, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
               variants={{
                 hidden: { opacity: 0, y: 30 },
@@ -367,12 +367,12 @@ const DataEngineering = () => {
 
       {/* Program Outcomes */}
       <Section className="bg-slate-50 border-t border-slate-100">
-        <SectionHeader 
+        <SectionHeader
           label="What You'll Be Able to Do"
           title="Program Outcomes"
           subtitle="Graduates leave with demonstrable engineering skills — not just theoretical knowledge, but deployed, production-grade systems they built themselves."
         />
-        
+
         <div className="max-w-6xl mx-auto mt-16 md:mt-24 grid md:grid-cols-2 gap-10 lg:gap-16">
           {[
             { n: "01", t: "Design Data Pipelines", d: "Architect and build robust ETL/ELT pipelines that move and transform data reliably at scale — from ingestion to analytical layers." },
@@ -380,7 +380,7 @@ const DataEngineering = () => {
             { n: "03", t: "Deploy to Cloud", d: "Package and ship data platforms to AWS and Google Cloud using modern cloud-native architecture and DevOps practices." },
             { n: "04", t: "Work in Real Teams", d: "Collaborate using Git, communicate technical decisions clearly, and contribute effectively in professional engineering environments." }
           ].map((item, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -401,7 +401,7 @@ const DataEngineering = () => {
       {/* Weekly Section */}
       <Section className="bg-[#34495E] text-white overflow-hidden relative border-t-8 border-primary">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-center">
-          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once:true }} className="md:w-1/2">
+          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="md:w-1/2">
             <span className="inline-block font-accent text-sm font-semibold tracking-widest text-[#A8D8EA] bg-[#A8D8EA]/10 px-4 py-2 rounded-full uppercase mb-6">
               Every Saturday
             </span>
@@ -412,8 +412,8 @@ const DataEngineering = () => {
               Technical ability gets you interviews. Professional readiness gets you hired. Every Saturday throughout the program, students participate in career development sessions.
             </p>
           </motion.div>
-          
-          <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once:true }} className="md:w-1/2 w-full relative">
+
+          <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="md:w-1/2 w-full relative">
             <div className="absolute inset-0 bg-primary/20 blur-[80px] rounded-full" />
             <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-white/20 relative z-10 shadow-2xl">
               <ul className="space-y-6">

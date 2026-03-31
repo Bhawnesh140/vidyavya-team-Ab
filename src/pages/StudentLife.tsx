@@ -344,11 +344,15 @@ const StudentLife = () => {
               <h3 className="font-body text-[14px] font-semibold tracking-wide uppercase text-primary mb-6">
                 {card.subtitle}
               </h3>
-              <ul className="space-y-4 mt-auto">
+              <ul className="space-y-4 pt-2 flex-grow">
                 {card.points.map((item, i) => (
-                  <li key={i} className="relative">
-                    <div className="absolute -left-5 top-2 w-1.5 h-1.5 bg-primary/80 rounded-full shrink-0" />
-                    <span className="font-body text-[15px] text-foreground/80 leading-relaxed block">{item}</span>
+                  <li key={i} className="flex items-start">
+                    <div className="w-5 shrink-0 pt-2 flex justify-start">
+                      <div className="w-1.5 h-1.5 bg-primary/80 rounded-full" />
+                    </div>
+                    <div className="font-body text-[15px] text-foreground/80 leading-relaxed flex-1 text-left">
+                      {item}
+                    </div>
                   </li>
                 ))}
               </ul>

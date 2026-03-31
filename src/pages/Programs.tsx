@@ -10,9 +10,6 @@ import {
   Users,
   Trophy,
   ArrowRight,
-  ChevronRight,
-  Database,
-  Brain,
 } from 'lucide-react';
 import { useRequestCallback } from '@/context/RequestCallbackContext';
 
@@ -39,455 +36,26 @@ const benefits = [
   },
 ];
 
-const dataEngineeringProgram = {
-  title: "Data Engineering Career Program",
-  tagline: "Build the modern data platforms, pipelines, and analytics infrastructure that power today's technology companies — from e-commerce to fintech and beyond.",
-  badges: ["6 Months · 24 Weeks", "Classroom / Hybrid", "Hands-On Projects", "Career Readiness"],
-  aboutSubtitle: "From Raw Data to Production Pipelines",
-  aboutDesc: "The Vidyavya Data Engineering Career Program is a 6-month intensive designed around how data engineers actually work in production environments. Every week combines real engineering concepts with hands-on projects that mirror the systems running at leading technology companies. You'll graduate with a portfolio, technical depth, and interview-ready confidence.",
-  aboutHighlights: [
-    { emoji: "⚙️", title: "Real Engineering Practices", desc: "Learn how data engineers work in production at scale — not just theory." },
-    { emoji: "🏗️", title: "Hands-On Projects", desc: "Build pipelines, warehouses, and dashboards with industry-standard tools." },
-    { emoji: "🔭", title: "Production Thinking", desc: "Design systems with resilience, observability, and scalability from day one." },
-    { emoji: "🎯", title: "Career Readiness", desc: "Graduate with a portfolio, technical depth, and interview confidence." }
-  ],
-  curriculumSubtitle: "Six Months. Six Engineering Milestones.",
-  curriculumDesc: "Each month builds on the last — starting with engineering foundations and culminating in a production-grade capstone that demonstrates full-stack data platform skills.",
-  curriculumMonths: [
-    {
-      emoji: "🐍",
-      title: "Month 1 — Engineering Foundations",
-      items: [
-        "Intro to Data Engineering — roles, data lifecycles & architecture",
-        "Linux & Shell Scripting — file systems, bash, cron & automation",
-        "Git & GitHub — version control, branching & pull requests",
-        "Python for data ingestion & API interaction",
-        "SQL — queries, aggregations, window functions & performance tuning"
-      ],
-      projectTitle: "Month 1 Project",
-      projectDesc: "Build a data ingestion script that pulls from public APIs and design SQL queries to analyze large transactional datasets."
-    },
-    {
-      emoji: "🗄️",
-      title: "Month 2 — Data Modeling & Pipelines",
-      items: [
-        "Data normalization & dimensional modeling",
-        "Star schema vs. snowflake schema design",
-        "ETL / ELT — batch processing & incremental loads",
-        "Pipeline idempotency, retry strategies & error handling",
-        "Data quality, validation & anomaly detection",
-        "OLTP vs. OLAP — building a mini data warehouse"
-      ],
-      projectTitle: "Month 2 Project",
-      projectDesc: "Build a complete end-to-end ETL pipeline from raw source data to a structured analytical layer."
-    },
-    {
-      emoji: "📊",
-      title: "Month 3 — Distributed Data Systems",
-      items: [
-        "Distributed computing — cluster computing & parallel processing",
-        "Apache Spark — RDDs, DataFrames & PySpark transformations",
-        "Data partitioning & shuffle operations",
-        "Optimizing distributed data processing jobs",
-        "Apache Kafka — event streaming, producers & consumers",
-        "Real-time data pipeline design"
-      ]
-    },
-    {
-      emoji: "☁️",
-      title: "Month 4 — Cloud & Modern Data Stack",
-      items: [
-        "AWS & GCP — compute, storage & networking fundamentals",
-        "Cloud storage — S3, GCS & data lake architecture",
-        "Lifecycle management for petabyte-scale datasets",
-        "Apache Airflow — DAGs, scheduling & monitoring pipelines",
-        "Analytics Engineering with dbt — tested transformation layers"
-      ]
-    },
-    {
-      emoji: "📈",
-      title: "Month 5 — Analytics & Business Data",
-      items: [
-        "Business metrics — customer analytics & financial reporting KPIs",
-        "BI & Dashboard design using Power BI & Tableau concepts",
-        "Visual storytelling for non-technical stakeholders",
-        "Deep dive into fact tables, dimension tables & data marts",
-        "Enterprise reporting structures at scale"
-      ]
-    },
-    {
-      emoji: "⚙️",
-      title: "Month 6 — System Design & Production",
-      items: [
-        "Data platform architecture — lakes, batch & streaming patterns",
-        "Security & compliance — GDPR, CCPA, access control",
-        "Data governance frameworks",
-        "Monitoring & observability — logging pipelines & incident management",
-        "Production runbooks & structured incident response"
-      ]
-    }
-  ],
-  capstoneTitle: "Final Capstone Project",
-  capstoneSubtitle: "Build a Complete Data Platform",
-  capstoneDesc: "Students design and build a production-grade data platform — demonstrating mastery of the full data engineering stack. This becomes your most powerful portfolio piece when entering the job market.",
-  capstoneDeliverables: [
-    "Ingestion pipelines from multiple source systems",
-    "Distributed processing with Apache Spark",
-    "Cloud deployment on AWS or GCP",
-    "A live, interactive analytics dashboard",
-    "Documented architecture with production observability"
-  ],
-  toolsSubtitle: "What You'll Work With",
-  tools: [
-    { cat: "Languages & Scripting", list: "Python SQL Bash / Shell PySpark" },
-    { cat: "Data Processing", list: "Apache Spark Apache Kafka ETL / ELT dbt" },
-    { cat: "Cloud Platforms", list: "AWS (S3, EC2) Google Cloud (GCS) Data Lakes" },
-    { cat: "Orchestration & Workflow", list: "Apache Airflow DAGs Cron Jobs" },
-    { cat: "Analytics & Visualization", list: "Power BI Tableau Data Warehousing Dimensional Modeling" },
-    { cat: "Engineering Practices", list: "Git / GitHub Data Quality Testing Monitoring & Observability" }
-  ],
-  outcomesSubtitle: "What You'll Be Able to Do",
-  outcomesDesc: "Graduates leave with demonstrable engineering skills — not just theoretical knowledge, but deployed, production-grade systems they built themselves.",
-  outcomesList: [
-    { num: "01", title: "Design Data Pipelines", desc: "Architect and build robust ETL/ELT pipelines that move and transform data reliably at scale — from ingestion to analytical layers." },
-    { num: "02", title: "Operate Distributed Systems", desc: "Work confidently with Apache Spark and Kafka to process large-scale datasets and build real-time data streaming pipelines." },
-    { num: "03", title: "Deploy to Cloud", desc: "Package and ship data platforms to AWS and Google Cloud using modern cloud-native architecture and DevOps practices." },
-    { num: "04", title: "Work in Real Teams", desc: "Collaborate using Git, communicate technical decisions clearly, and contribute effectively in professional engineering environments." }
-  ],
-  professionalSkills: [
-    "Resume Building", "GitHub Portfolio", "LinkedIn Optimization", "Mock Interviews", "Workplace Communication"
-  ]
-};
-
-const aiMlProgram = {
-  title: "AI / ML Engineering Career Program",
-  tagline: "Design, train, and deploy production-ready AI systems — going far beyond notebook experimentation into real engineering workflows that deliver models to users at scale.",
-  badges: ["6 Months · 24 Weeks", "Classroom / Hybrid", "End-to-End ML Systems", "MLOps & Deployment"],
-  aboutSubtitle: "From Model Notebooks to Production AI",
-  aboutDesc: "The Vidyavya AI/ML Engineering Career Program is a 6-month intensive built around the full lifecycle of machine learning — from data preparation and model training to cloud deployment and production monitoring. Students graduate having deployed real AI systems, making them genuinely job-ready in one of the highest-demand fields in technology.",
-  aboutHighlights: [
-    { emoji: "🧠", title: "End-to-End ML Systems", desc: "Build complete pipelines from raw data to production inference endpoints." },
-    { emoji: "🚀", title: "MLOps & Deployment", desc: "Package, deploy, and maintain ML models as reliable production APIs." },
-    { emoji: "🔬", title: "Deep Learning Mastery", desc: "CNNs, RNNs, Transformers, and transfer learning from real frameworks." },
-    { emoji: "🎯", title: "Applied AI Systems", desc: "NLP, computer vision, LLMs, and recommendation engines — built for users." }
-  ],
-  curriculumSubtitle: "Six Months. Six Engineering Milestones.",
-  curriculumDesc: "Each month builds systematically — from Python and data mastery to building and shipping complete AI systems at scale.",
-  curriculumMonths: [
-    {
-      emoji: "🐍",
-      title: "Month 1 — Data & Python Foundations",
-      items: [
-        "Advanced Python for ML workflows",
-        "NumPy for numerical computation",
-        "Pandas for data manipulation",
-        "Data cleaning and missing value handling",
-        "Feature preparation and engineering",
-        "Exploratory data analysis techniques"
-      ]
-    },
-    {
-      emoji: "🤖",
-      title: "Month 2 — Machine Learning Fundamentals",
-      items: [
-        "Regression and classification models",
-        "Clustering algorithms & unsupervised methods",
-        "scikit-learn end-to-end workflows",
-        "Cross-validation and model evaluation",
-        "Hyperparameter tuning strategies",
-        "Avoiding overfitting in practice"
-      ]
-    },
-    {
-      emoji: "🧠",
-      title: "Month 3 — Deep Learning",
-      items: [
-        "Neural network architecture & backpropagation",
-        "CNNs — feature extraction, pooling & image classification",
-        "RNNs & LSTMs for sequential & time-series data",
-        "Transfer learning from TensorFlow Hub & PyTorch",
-        "Training loops from scratch to production"
-      ]
-    },
-    {
-      emoji: "🚀",
-      title: "Month 4 — MLOps & Production Deployment",
-      items: [
-        "Package models for production (Docker, APIs)",
-        "Deploy models as callable REST APIs",
-        "Automate CI/CD pipelines for ML systems",
-        "Monitor models in production for drift and failures",
-        "Maintain and retrain deployed models"
-      ],
-      projectTitle: "Month 4 Milestone",
-      projectDesc: "Students deploy at least one live, callable production API — a portfolio milestone that significantly strengthens job applications."
-    },
-    {
-      emoji: "🤖",
-      title: "Month 5 — Applied AI Systems",
-      items: [
-        "NLP pipelines — tokenization, embeddings & text workflows",
-        "Recommendation systems — collaborative & content-based filtering",
-        "Computer vision — object detection & pretrained vision models",
-        "LLMs & prompt engineering for production AI applications",
-        "Personalization engines like those used by streaming platforms"
-      ]
-    },
-    {
-      emoji: "⚙️",
-      title: "Month 6 — ML System Design & Final Project",
-      items: [
-        "End-to-end ML pipeline architecture",
-        "Inference system design patterns",
-        "Model scaling — vertical & horizontal strategies",
-        "Latency vs. throughput trade-offs",
-        "Feature stores and model registries"
-      ]
-    }
-  ],
-  month3DeepDive: {
-    title: "Month 3 Deep Dive — Deep Learning (Four Core Architectures)",
-    items: [
-      { emoji: "🧬", title: "Neural Networks", desc: "Architecture fundamentals, backpropagation, activation functions, and training loops built from scratch." },
-      { emoji: "📷", title: "CNNs", desc: "Convolutional Neural Networks for image data — feature extraction, pooling, and classification pipelines." },
-      { emoji: "🔄", title: "RNNs & LSTMs", desc: "Recurrent architectures for sequential data — time series, text, and memory-aware modeling." },
-      { emoji: "⚡", title: "Transfer Learning", desc: "Leverage pretrained models from TensorFlow Hub and PyTorch to accelerate development on new tasks." }
-    ]
-  },
-  capstoneTitle: "Final Capstone Project",
-  capstoneSubtitle: "Design & Build a Complete AI System",
-  capstoneDesc: "Students design and build a complete end-to-end AI system — a polished, portfolio-ready deliverable that demonstrates the full ML engineering stack, from raw data to monitored production deployment.",
-  capstoneDeliverables: [
-    "Data preparation and feature engineering pipeline",
-    "Model training, evaluation, and iteration",
-    "API-based production deployment",
-    "Monitoring and observability setup",
-    "Portfolio-ready documentation and presentation"
-  ],
-  toolsSubtitle: "What You'll Work With",
-  tools: [
-    { cat: "Languages & Libraries", list: "Python NumPy Pandas scikit-learn" },
-    { cat: "Deep Learning Frameworks", list: "TensorFlow PyTorch TensorFlow Hub Keras" },
-    { cat: "Applied AI", list: "NLP Pipelines Computer Vision LLMs Prompt Engineering" },
-    { cat: "MLOps & Deployment", list: "Docker REST APIs CI/CD for ML Model Monitoring" },
-    { cat: "Cloud & Infrastructure", list: "AWS Google Cloud Feature Stores Model Registries" },
-    { cat: "Engineering Practices", list: "Git / GitHub Model Evaluation Hyperparameter Tuning" }
-  ],
-  outcomesSubtitle: "What You'll Be Able to Do",
-  outcomesDesc: "Graduates leave with demonstrated, deployable AI/ML engineering ability — not just theoretical knowledge, but live systems they shipped.",
-  outcomesList: [
-    { num: "01", title: "Build ML Systems End-to-End", desc: "Train, evaluate, and iterate on machine learning models across regression, classification, and deep learning domains using real frameworks." },
-    { num: "02", title: "Deploy to Production", desc: "Package and ship models to AWS and Google Cloud as reliable, monitored production APIs using modern MLOps and DevOps practices." },
-    { num: "03", title: "Build Applied AI Applications", desc: "Design and build NLP pipelines, recommendation systems, computer vision apps, and LLM-powered tools that solve real user problems." },
-    { num: "04", title: "Work in Real Teams", desc: "Collaborate using Git, communicate technical decisions clearly, and contribute effectively to professional engineering environments from day one." }
-  ],
-  professionalSkills: [
-    "Resume Building", "GitHub Portfolio", "LinkedIn Optimization", "Mock Interviews", "Workplace Communication"
-  ]
-};
-
-const ProgramBlock = ({ program, index }: { program: any, index: number }) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.6 }}
-      className="relative w-full max-w-6xl mx-auto mb-24 bg-card rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-border/50"
-    >
-      {/* Decorative background grid pattern for tech theme */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none opacity-50 z-0"></div>
-      {/* Subtle glow */}
-      <div className={`absolute -top-40 ${index % 2 === 0 ? '-left-40 bg-primary/20' : '-right-40 bg-accent/20'} w-[500px] h-[500px] rounded-full blur-[120px] pointer-events-none z-0 opacity-60`}></div>
-
-      {/* Program Header */}
-      <div className="relative z-10 px-6 pt-12 pb-8 md:px-12 md:pt-16 border-b border-border/40">
-        <span className="font-accent text-sm font-medium text-primary mb-3 block">
-          Vidyavya · Program {index + 1} of 2
-        </span>
-        <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-4">
-          {program.title}
-        </h2>
-        <p className="font-body text-lg md:text-xl text-muted-foreground max-w-4xl text-balance leading-relaxed">
-          {program.tagline}
-        </p>
-
-        {/* Badges */}
-        <div className="flex flex-wrap gap-2 md:gap-3 mt-6">
-          {program.badges.map((badge: string, i: number) => (
-            <span key={i} className="inline-flex items-center px-4 py-2 rounded-full font-body text-sm font-medium bg-secondary/10 text-secondary-foreground">
-              {badge}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      <div className="relative z-10 grid lg:grid-cols-12 gap-0 border-b border-border/40 divide-y lg:divide-y-0 lg:divide-x divide-border/40">
-        
-        {/* Left Column: About & Outcomes */}
-        <div className="lg:col-span-4 bg-muted/30 p-6 md:p-12 flex flex-col gap-12">
-          
-          {/* About */}
-          <div>
-            <h3 className="font-heading text-xl font-semibold mb-2">About This Program</h3>
-            <p className="font-heading text-sm text-primary font-medium mb-4">{program.aboutSubtitle}</p>
-            <p className="font-body text-muted-foreground leading-relaxed text-sm mb-6">{program.aboutDesc}</p>
-            <div className="space-y-4">
-              {program.aboutHighlights.map((hi: any, i: number) => (
-                <div key={i} className="flex gap-3 items-start">
-                  <span className="text-xl bg-background rounded-lg p-2 shadow-sm border border-border/50">{hi.emoji}</span>
-                  <div>
-                    <h4 className="font-heading font-semibold text-sm">{hi.title}</h4>
-                    <p className="font-body text-xs text-muted-foreground mt-1">{hi.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Program Outcomes Sidebar format */}
-          <div>
-            <h3 className="font-heading text-xl font-semibold mb-2">Program Outcomes</h3>
-            <p className="font-heading text-sm text-primary font-medium mb-4">{program.outcomesSubtitle}</p>
-            <p className="font-body text-muted-foreground text-sm mb-6 leading-relaxed">{program.outcomesDesc}</p>
-            <div className="space-y-6">
-              {program.outcomesList.map((outcome: any, i: number) => (
-                <div key={i} className="relative pl-4 border-l-2 border-primary/20">
-                  <span className="absolute -left-3 top-0 text-3xl font-bold font-heading text-primary/10 tracking-tighter leading-none">{outcome.num}</span>
-                  <h4 className="font-heading font-semibold text-sm mb-1">{outcome.title}</h4>
-                  <p className="font-body text-xs text-muted-foreground leading-relaxed">{outcome.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-          
-        </div>
-
-        {/* Right Column: Curriculum & Deep Dive */}
-        <div className="lg:col-span-8 p-6 md:p-12 bg-background">
-          <h3 className="font-heading text-2xl font-bold mb-2">Curriculum</h3>
-          <p className="font-heading text-md text-primary font-medium mb-4">{program.curriculumSubtitle}</p>
-          <p className="font-body text-muted-foreground leading-relaxed mb-8 max-w-2xl">{program.curriculumDesc}</p>
-
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8 gap-y-10">
-            {program.curriculumMonths.map((month: any, i: number) => (
-              <div key={i} className="group flex flex-col">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl bg-muted rounded-xl p-2 shadow-sm flex-shrink-0 transition-transform group-hover:scale-110">{month.emoji}</span>
-                  <h4 className="font-heading font-bold text-md text-foreground">{month.title}</h4>
-                </div>
-                <ul className="space-y-2.5 mb-4 flex-grow">
-                  {month.items.map((item: string, j: number) => (
-                    <li key={j} className="flex items-start gap-2.5">
-                      <ChevronRight className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="font-body text-sm text-muted-foreground leading-snug">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                {month.projectTitle && (
-                  <div className="mt-auto bg-primary/5 border border-primary/10 rounded-xl p-4">
-                    <h5 className="font-heading font-semibold text-xs uppercase tracking-wider text-primary mb-1">{month.projectTitle}</h5>
-                    <p className="font-body text-xs text-muted-foreground leading-relaxed">{month.projectDesc}</p>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-
-          {/* Special element for AI month 3 deep dive */}
-          {program.month3DeepDive && (
-            <div className="mt-12 bg-secondary/5 border border-secondary/20 rounded-2xl p-6 md:p-8">
-              <h3 className="font-heading text-lg font-bold mb-6">{program.month3DeepDive.title}</h3>
-              <div className="grid sm:grid-cols-2 gap-6">
-                {program.month3DeepDive.items.map((item: any, i: number) => (
-                  <div key={i} className="flex gap-3 items-start">
-                    <span className="text-2xl">{item.emoji}</span>
-                    <div>
-                      <h4 className="font-heading font-semibold text-sm mb-1">{item.title}</h4>
-                      <p className="font-body text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-        </div>
-      </div>
-
-      {/* Capstone & Tools Horizontal Layout */}
-      <div className="relative z-10 grid lg:grid-cols-2 lg:divide-x divide-border/40">
-        <div className="p-6 md:p-12 bg-background">
-          <h3 className="font-heading text-2xl font-bold mb-2">{program.capstoneTitle}</h3>
-          <p className="font-heading text-md text-primary font-medium mb-4">{program.capstoneSubtitle}</p>
-          <p className="font-body text-sm text-muted-foreground leading-relaxed mb-6">{program.capstoneDesc}</p>
-          
-          <h4 className="font-heading font-semibold text-sm mb-4">Capstone Deliverables</h4>
-          <ul className="space-y-3">
-            {program.capstoneDeliverables.map((item: string, i: number) => (
-              <li key={i} className="flex items-start gap-3 bg-muted/50 p-3 rounded-lg">
-                <ChevronRight className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                <span className="font-body text-sm font-medium text-foreground">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        
-        <div className="p-6 md:p-12 bg-muted/30">
-          <h3 className="font-heading text-2xl font-bold mb-2">Tools & Technologies</h3>
-          <p className="font-heading text-md text-primary font-medium mb-8">{program.toolsSubtitle}</p>
-          <div className="grid sm:grid-cols-2 gap-y-6 gap-x-8">
-            {program.tools.map((tool: any, i: number) => (
-              <div key={i}>
-                <h4 className="font-heading text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-2">{tool.cat}</h4>
-                <p className="font-body text-sm font-medium text-foreground leading-relaxed">{tool.list}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Footer Element for Professional Skills */}
-      <div className="relative z-10 p-6 md:p-8 bg-foreground/5 border-t border-border/40 flex flex-col md:flex-row items-center justify-between gap-4">
-        <div>
-          <h3 className="font-heading text-sm font-semibold text-foreground">Every Saturday — Complementary Professional Skills</h3>
-        </div>
-        <div className="flex flex-wrap items-center justify-center gap-2">
-          {program.professionalSkills.map((skill: string, i: number) => (
-            <span key={i} className="px-3 py-1.5 bg-background rounded-full text-xs font-medium border border-border/50 text-muted-foreground shadow-sm">
-              {skill}
-            </span>
-          ))}
-        </div>
-      </div>
-    </motion.div>
-  );
-};
-
 const Programs = () => {
   const { openModal } = useRequestCallback();
   return (
     <Layout>
       {/* Hero */}
-      <section className="pt-12 pb-16 md:pt-20 md:pb-24 bg-background relative overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none z-0"></div>
-        <div className="container-custom relative z-10">
+      <section className="pt-12 pb-8 md:pt-20 md:pb-12 bg-gradient-to-b from-cream to-background">
+        <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto text-center"
           >
-            <span className="inline-block font-accent text-xl font-medium text-primary uppercase tracking-wider mb-4">
-              Our Programs
-            </span>
-            <h1 className="font-heading text-[1.7rem] md:text-5xl lg:text-[3.2rem] leading-tight font-bold text-foreground mb-6">
-              Job-Focused <span className="text-primary">Tech Programs</span>
+            <h1 className="font-heading text-[1.7rem] sm:text-3xl md:text-4xl lg:text-[2.8rem] font-bold tracking-tight mb-3 md:mb-4">
+              <span className="text-black">Two Programs</span> <span className="text-[#FF5757]">One Mission</span>
             </h1>
-            <p className="font-body text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 max-w-2xl mx-auto">
-              Master in-demand skills with hands-on training, real projects, and 6-month guaranteed internships in Data Engineering and AI/ML.
+            <p className="font-body text-lg md:text-xl text-muted-foreground leading-relaxed mb-5 md:mb-6">
+              Intensive 6-month engineering tracks built around the skills that technology companies actually hire for. Choose the path that aligns with your career goals.
             </p>
-            <Button variant="cta" size="xl" onClick={openModal} className="shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-shadow">
+            <Button variant="cta" size="xl" onClick={openModal}>
               Request Callback
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
@@ -495,10 +63,213 @@ const Programs = () => {
         </div>
       </section>
 
-      {/* Programs Redesign Section */}
-      <section className="py-12 bg-background relative z-10 px-4 md:px-8">
-        <ProgramBlock program={dataEngineeringProgram} index={0} />
-        <ProgramBlock program={aiMlProgram} index={1} />
+      {/* Two Vertical Cards Layout (Side-by-Side) */}
+      <section className="pt-8 pb-16 md:pt-12 md:pb-24 bg-background">
+        <div className="container-custom max-w-6xl mx-auto">
+
+
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+            
+            {/* Card 1 — Data Engineering */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="flex flex-col bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-[0_20px_40px_rgba(52,73,94,0.45)] hover:-translate-y-2 transition-all duration-300 border border-border/50"
+            >
+              {/* Top Section */}
+              <div className="bg-[#34495E] text-white p-8 md:p-10">
+                <span className="inline-block font-accent text-xs font-semibold tracking-wider uppercase opacity-80 mb-3">
+                  Program 01
+                </span>
+                <h3 className="font-heading text-3xl font-bold mb-4 text-white">
+                  Data Engineering
+                </h3>
+                <p className="font-body text-sm md:text-base opacity-90 leading-relaxed mb-6 text-white">
+                  Build modern data platforms, pipelines, and analytics infrastructure used by leading tech companies.
+                </p>
+                <div className="flex flex-wrap gap-3 mt-2">
+                  <span className="px-4 py-1.5 bg-white/10 text-white rounded-full text-xs font-semibold shadow-sm border border-white/20 whitespace-nowrap">
+                    6 Months
+                  </span>
+                  <span className="px-4 py-1.5 bg-white/10 text-white rounded-full text-xs font-semibold shadow-sm border border-white/20 whitespace-nowrap">
+                    Hands-On Projects
+                  </span>
+                  <span className="px-4 py-1.5 bg-white/10 text-white rounded-full text-xs font-semibold shadow-sm border border-white/20 whitespace-nowrap">
+                    Cloud Deployment
+                  </span>
+                </div>
+              </div>
+
+              {/* Tech Stack Icons Row */}
+              <div className="bg-muted/30 border-b border-border/50 py-5 px-8 md:px-10 overflow-hidden relative">
+                <span className="inline-block font-accent text-[10px] font-semibold tracking-widest text-muted-foreground uppercase mb-4">
+                  Core Technologies
+                </span>
+                <div className="flex gap-6 overflow-x-auto pb-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] items-center justify-start pr-8">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" className="h-9 w-9 hover:scale-110 hover:-translate-y-1 transition-transform flex-shrink-0 drop-shadow-sm" title="Python" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="SQL" className="h-9 w-9 hover:scale-110 hover:-translate-y-1 transition-transform flex-shrink-0 drop-shadow-sm" title="SQL" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachespark/apachespark-original.svg" alt="Spark" className="h-9 w-9 hover:scale-110 hover:-translate-y-1 transition-transform flex-shrink-0 drop-shadow-sm" title="Spark" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" className="h-9 w-9 hover:scale-110 hover:-translate-y-1 transition-transform flex-shrink-0 drop-shadow-sm" title="Java" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" className="h-9 w-auto hover:scale-110 hover:-translate-y-1 transition-transform flex-shrink-0 drop-shadow-sm" title="AWS" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" className="h-9 w-9 hover:scale-110 hover:-translate-y-1 transition-transform flex-shrink-0 drop-shadow-sm" title="Docker" />
+                </div>
+              </div>
+
+              {/* Course Outline */}
+              <div className="p-8 md:p-10 flex-grow flex flex-col">
+                <span className="inline-block font-accent text-xs font-semibold tracking-widest text-muted-foreground uppercase mb-6">
+                  Course Outline
+                </span>
+                <div className="space-y-6 flex-grow mb-8">
+                  <div className="flex gap-4">
+                    <span className="font-heading font-bold text-[#34495E] text-lg">01</span>
+                    <div>
+                      <h4 className="font-heading font-semibold text-foreground mb-1">Engineering Foundations</h4>
+                      <p className="font-body text-sm text-muted-foreground leading-relaxed">Linux, shell scripting, Git, Python, and SQL — the core toolkit every data engineer needs to work in real codebases.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <span className="font-heading font-bold text-[#34495E] text-lg">02</span>
+                    <div>
+                      <h4 className="font-heading font-semibold text-foreground mb-1">Data Modeling & Pipelines</h4>
+                      <p className="font-body text-sm text-muted-foreground leading-relaxed">ETL/ELT design, dimensional modeling, data quality validation, and building end-to-end analytical pipelines from raw source data.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <span className="font-heading font-bold text-[#34495E] text-lg">03</span>
+                    <div>
+                      <h4 className="font-heading font-semibold text-foreground mb-1">Distributed Systems & Streaming</h4>
+                      <p className="font-body text-sm text-muted-foreground leading-relaxed">Apache Spark for large-scale batch processing and Apache Kafka for real-time event streaming and pipeline design.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <span className="font-heading font-bold text-[#34495E] text-lg">04</span>
+                    <div>
+                      <h4 className="font-heading font-semibold text-foreground mb-1">Cloud, Orchestration & Analytics Engineering</h4>
+                      <p className="font-body text-sm text-muted-foreground leading-relaxed">AWS & GCP cloud platforms, data lake architecture, Apache Airflow for orchestration, and dbt for transformation layers.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <span className="font-heading font-bold text-[#34495E] text-lg">05</span>
+                    <div>
+                      <h4 className="font-heading font-semibold text-foreground mb-1">System Design, BI & Production</h4>
+                      <p className="font-body text-sm text-muted-foreground leading-relaxed">Business metrics, Power BI & Tableau dashboards, data platform architecture, security, compliance, and a full capstone project.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* CTA */}
+                <Button variant="outline" className="w-full text-[#34495E] border-[#34495E] hover:bg-[#34495E] hover:text-white transition-colors" asChild>
+                  <Link to="/programs/data-engineering">
+                    Know More
+                  </Link>
+                </Button>
+              </div>
+            </motion.div>
+
+            {/* Card 2 — AI / ML Engineering */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="flex flex-col bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-[0_20px_40px_rgba(255,87,87,0.45)] hover:-translate-y-2 transition-all duration-300 border border-border/50"
+            >
+              {/* Top Section */}
+              <div className="bg-primary text-primary-foreground p-8 md:p-10">
+                <span className="inline-block font-accent text-xs font-semibold tracking-wider uppercase opacity-80 mb-3">
+                  Program 02
+                </span>
+                <h3 className="font-heading text-3xl font-bold mb-4">
+                  AI / ML Engineering
+                </h3>
+                <p className="font-body text-sm md:text-base opacity-90 leading-relaxed mb-6">
+                  Design and deploy production-ready machine learning and artificial intelligence systems end to end.
+                </p>
+                <div className="flex flex-wrap gap-3 mt-2">
+                  <span className="px-4 py-1.5 bg-background text-foreground rounded-full text-xs font-semibold shadow-sm border border-border/50 whitespace-nowrap">
+                    6 Months
+                  </span>
+                  <span className="px-4 py-1.5 bg-background text-foreground rounded-full text-xs font-semibold shadow-sm border border-border/50 whitespace-nowrap">
+                    Deep Learning
+                  </span>
+                  <span className="px-4 py-1.5 bg-background text-foreground rounded-full text-xs font-semibold shadow-sm border border-border/50 whitespace-nowrap">
+                    MLOps
+                  </span>
+                </div>
+              </div>
+
+              {/* Tech Stack Icons Row */}
+              <div className="bg-muted/30 border-b border-border/50 py-5 px-8 md:px-10 overflow-hidden relative">
+                <span className="inline-block font-accent text-[10px] font-semibold tracking-widest text-muted-foreground uppercase mb-4">
+                  Core Technologies
+                </span>
+                <div className="flex gap-6 overflow-x-auto pb-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] items-center justify-start pr-8">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" className="h-9 w-9 hover:scale-110 hover:-translate-y-1 transition-transform flex-shrink-0 drop-shadow-sm" title="Python" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" className="h-9 w-9 hover:scale-110 hover:-translate-y-1 transition-transform flex-shrink-0 drop-shadow-sm" title="TensorFlow" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="PyTorch" className="h-9 w-9 hover:scale-110 hover:-translate-y-1 transition-transform flex-shrink-0 drop-shadow-sm" title="PyTorch" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" className="h-9 w-9 hover:scale-110 hover:-translate-y-1 transition-transform flex-shrink-0 drop-shadow-sm" title="React" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" className="h-9 w-9 hover:scale-110 hover:-translate-y-1 transition-transform flex-shrink-0 drop-shadow-sm" title="Node.js" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" className="h-9 w-9 hover:scale-110 hover:-translate-y-1 transition-transform flex-shrink-0 drop-shadow-sm" title="JavaScript" />
+                </div>
+              </div>
+
+              {/* Course Outline */}
+              <div className="p-8 md:p-10 flex-grow flex flex-col">
+                <span className="inline-block font-accent text-xs font-semibold tracking-widest text-muted-foreground uppercase mb-6">
+                  Course Outline
+                </span>
+                <div className="space-y-6 flex-grow mb-8">
+                  <div className="flex gap-4">
+                    <span className="font-heading font-bold text-primary text-lg">01</span>
+                    <div>
+                      <h4 className="font-heading font-semibold text-foreground mb-1">Python, Data & ML Fundamentals</h4>
+                      <p className="font-body text-sm text-muted-foreground leading-relaxed">Advanced Python, NumPy, Pandas, feature engineering, and core ML models — regression, classification, and clustering with scikit-learn.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <span className="font-heading font-bold text-primary text-lg">02</span>
+                    <div>
+                      <h4 className="font-heading font-semibold text-foreground mb-1">Deep Learning</h4>
+                      <p className="font-body text-sm text-muted-foreground leading-relaxed">Neural networks, CNNs for image data, RNNs and LSTMs for sequences, and transfer learning with TensorFlow and PyTorch.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <span className="font-heading font-bold text-primary text-lg">03</span>
+                    <div>
+                      <h4 className="font-heading font-semibold text-foreground mb-1">MLOps & Production Deployment</h4>
+                      <p className="font-body text-sm text-muted-foreground leading-relaxed">Package, deploy, and monitor ML models as live production APIs — with CI/CD automation and model drift detection.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <span className="font-heading font-bold text-primary text-lg">04</span>
+                    <div>
+                      <h4 className="font-heading font-semibold text-foreground mb-1">Applied AI Systems</h4>
+                      <p className="font-body text-sm text-muted-foreground leading-relaxed">NLP pipelines, recommendation engines, computer vision applications, and LLM-based tools with prompt engineering for real users.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <span className="font-heading font-bold text-primary text-lg">05</span>
+                    <div>
+                      <h4 className="font-heading font-semibold text-foreground mb-1">ML System Design & Capstone</h4>
+                      <p className="font-body text-sm text-muted-foreground leading-relaxed">Inference architecture, model scaling, feature stores, and a complete end-to-end AI system as a production-ready portfolio project.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* CTA */}
+                <Button variant="outline" className="w-full text-primary border-primary hover:bg-primary hover:text-white transition-colors" asChild>
+                  <Link to="/programs/ai-ml-engineering">
+                    Know More
+                  </Link>
+                </Button>
+              </div>
+            </motion.div>
+
+          </div>
+        </div>
       </section>
 
       {/* Benefits - STRICTLY KEPT AS IS */}
@@ -533,22 +304,7 @@ const Programs = () => {
         </div>
       </Section>
 
-      {/* CTA */}
-      <Section>
-        <div className="bg-gradient-to-r from-primary/10 to-accent/30 rounded-3xl p-8 md:p-12 text-center shadow-sm border border-border/50">
-          <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-4">
-            Ready to Start Your Journey?
-          </h2>
-          <p className="font-body text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Take the first step towards a successful career in tech.
-            Our team is ready to guide you through the enrollment process.
-          </p>
-          <Button variant="cta" size="xl" onClick={openModal} className="shadow-md hover:shadow-lg transition-all">
-            Request Callback
-            <ArrowRight className="w-5 h-5 ml-2" />
-          </Button>
-        </div>
-      </Section>
+
     </Layout>
   );
 };

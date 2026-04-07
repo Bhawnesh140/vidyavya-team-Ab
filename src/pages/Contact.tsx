@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { motion } from 'framer-motion';
-import { MapPin, Mail, Phone, Send, CheckCircle, Instagram, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { MapPin, Mail, Phone, Send, CheckCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { z } from 'zod';
 
@@ -295,36 +295,36 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Visit Vidyavya Instagram"
-                    className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/90 hover:text-white hover:border-white/60 hover:scale-110 transition-all duration-300 shadow-sm"
+                    className="text-white/90 hover:text-white hover:scale-110 transition-all duration-300"
                   >
-                    <Instagram className="w-5 h-5" strokeWidth={1.5} />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                   </a>
                   <a
                     href="https://www.facebook.com/people/Vidyavya/61585982198263/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Visit Vidyavya Facebook"
-                    className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/90 hover:text-white hover:border-white/60 hover:scale-110 transition-all duration-300 shadow-sm"
+                    className="text-white/90 hover:text-white hover:scale-110 transition-all duration-300"
                   >
-                    <Facebook className="w-5 h-5" strokeWidth={1.5} />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12c0-5.523-4.477-10-10-10z"/></svg>
                   </a>
                   <a
                     href="https://x.com/Vidyavya_"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Visit Vidyavya X"
-                    className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/90 hover:text-white hover:border-white/60 hover:scale-110 transition-all duration-300 shadow-sm"
+                    className="text-white/90 hover:text-white hover:scale-110 transition-all duration-300"
                   >
-                    <Twitter className="w-5 h-5" strokeWidth={1.5} />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.294 19.497h2.039L6.482 3.239H4.293L17.607 20.65z"/></svg>
                   </a>
                   <a
                     href="https://www.linkedin.com/company/vidyavya/?viewAsMember=true"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Visit Vidyavya LinkedIn"
-                    className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/90 hover:text-white hover:border-white/60 hover:scale-110 transition-all duration-300 shadow-sm"
+                    className="text-white/90 hover:text-white hover:scale-110 transition-all duration-300"
                   >
-                    <Linkedin className="w-5 h-5" strokeWidth={1.5} />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                   </a>
                 </div>
               </div>

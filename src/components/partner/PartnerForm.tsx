@@ -79,7 +79,7 @@ const PartnerForm = ({ open, onOpenChange }: PartnerFormProps) => {
             setStep(1);
             form.reset();
             onOpenChange(false);
-        }, 2000);
+        }, 10000);
     };
 
     const nextStep = async () => {

@@ -58,6 +58,16 @@ const RequestCallbackModal = () => {
         }
     }, [isOpen]);
 
+    // Auto-close modal after 10 seconds on successful submission
+    React.useEffect(() => {
+        if (isSubmitted && isOpen) {
+            const timer = setTimeout(() => {
+                closeModal();
+            }, 10000);
+            return () => clearTimeout(timer);
+        }
+    }, [isSubmitted, isOpen, closeModal]);
+
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -268,8 +278,8 @@ const RequestCallbackModal = () => {
                             transition={{ duration: 0.4, ease: "easeOut" }}
                             className="flex flex-col items-center justify-center py-8 text-center space-y-4"
                         >
-                            <div className="rounded-full bg-primary/10 p-3 mb-2">
-                                <CheckCircle2 className="h-12 w-12 text-primary" />
+                            <div className="rounded-full bg-green-100 p-3 mb-2">
+                                <CheckCircle2 className="h-12 w-12 text-green-600" />
                             </div>
                             <div className="space-y-2">
                                 <h3 className="text-2xl font-heading font-bold text-foreground">

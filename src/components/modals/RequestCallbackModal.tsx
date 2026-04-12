@@ -3,7 +3,8 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { Loader2 } from 'lucide-react';
+import { Loader2, CheckCircle2 } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import {
     Dialog,
@@ -44,6 +45,18 @@ const formSchema = z.object({
 const RequestCallbackModal = () => {
     const { isOpen, closeModal } = useRequestCallback();
     const [isSubmitting, setIsSubmitting] = React.useState(false);
+    const [isSubmitted, setIsSubmitted] = React.useState(false);
+
+    // Reset submission state when modal closes
+    React.useEffect(() => {
+        if (!isOpen) {
+            const timer = setTimeout(() => {
+                setIsSubmitted(false);
+                form.reset();
+            }, 300); // Wait for modal close animation
+            return () => clearTimeout(timer);
+        }
+    }, [isOpen]);
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -82,9 +95,7 @@ const RequestCallbackModal = () => {
 
             if (data.status === "success") {
                 console.log('Form Submitted:', values);
-                toast.success('Request submitted! We will call you back shortly.');
-                form.reset();
-                closeModal();
+                setIsSubmitted(true);
             } else {
                 console.error("Submission error:", data);
                 toast.error('Something went wrong. Please try again.');
@@ -99,146 +110,185 @@ const RequestCallbackModal = () => {
 
     return (
         <Dialog open={isOpen} onOpenChange={(open) => !open && closeModal()}>
-            <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
-                <DialogHeader>
-                    <DialogTitle className="text-xl md:text-2xl text-center font-heading text-foreground">
-                        Request a CallBack
-                    </DialogTitle>
-                    <DialogDescription className="text-center font-body text-muted-foreground mt-2">
-                        Want to understand if Vidyavya is right for you? <br />
-                        Share your details and we'll call you back shortly.
-                    </DialogDescription>
-                </DialogHeader>
+            <DialogContent className="sm:max-w-[450px] overflow-hidden">
+                <AnimatePresence mode="wait">
+                    {!isSubmitted ? (
+                        <motion.div
+                            key="form-state"
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            transition={{ duration: 0.3 }}
+                        >
+                            <DialogHeader>
+                                <DialogTitle className="text-xl md:text-2xl text-center font-heading text-foreground">
+                                    Request a CallBack
+                                </DialogTitle>
+                                <DialogDescription className="text-center font-body text-muted-foreground mt-2">
+                                    Want to understand if Vidyavya is right for you? <br />
+                                    Share your details and we'll call you back shortly.
+                                </DialogDescription>
+                            </DialogHeader>
 
-                <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 mt-4">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <FormField
-                                control={form.control}
-                                name="firstName"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel className="font-body text-foreground">First Name*</FormLabel>
-                                        <FormControl>
-                                            <Input placeholder="Enter first name" {...field} />
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                            <FormField
-                                control={form.control}
-                                name="lastName"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel className="font-body text-foreground">Last Name*</FormLabel>
-                                        <FormControl>
-                                            <Input placeholder="Enter last name" {...field} />
-                                        </FormControl>
-                                        <FormMessage />
-                                    </FormItem>
-                                )}
-                            />
-                        </div>
+                            <Form {...form}>
+                                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 mt-4">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <FormField
+                                            control={form.control}
+                                            name="firstName"
+                                            render={({ field }) => (
+                                                <FormItem>
+                                                    <FormLabel className="font-body text-foreground">First Name*</FormLabel>
+                                                    <FormControl>
+                                                        <Input placeholder="Enter first name" {...field} />
+                                                    </FormControl>
+                                                    <FormMessage />
+                                                </FormItem>
+                                            )}
+                                        />
+                                        <FormField
+                                            control={form.control}
+                                            name="lastName"
+                                            render={({ field }) => (
+                                                <FormItem>
+                                                    <FormLabel className="font-body text-foreground">Last Name*</FormLabel>
+                                                    <FormControl>
+                                                        <Input placeholder="Enter last name" {...field} />
+                                                    </FormControl>
+                                                    <FormMessage />
+                                                </FormItem>
+                                            )}
+                                        />
+                                    </div>
 
-                        <FormField
-                            control={form.control}
-                            name="email"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel className="font-body text-foreground">Email Address</FormLabel>
-                                    <FormControl>
-                                        <Input placeholder="Enter email address" type="email" {...field} />
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
+                                    <FormField
+                                        control={form.control}
+                                        name="email"
+                                        render={({ field }) => (
+                                            <FormItem>
+                                                <FormLabel className="font-body text-foreground">Email Address</FormLabel>
+                                                <FormControl>
+                                                    <Input placeholder="Enter email address" type="email" {...field} />
+                                                </FormControl>
+                                                <FormMessage />
+                                            </FormItem>
+                                        )}
+                                    />
 
-                        <FormField
-                            control={form.control}
-                            name="phone"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel className="font-body text-foreground">Phone Number*</FormLabel>
-                                    <FormControl>
-                                        <div className="flex">
-                                            <div className="flex items-center justify-center px-3 border border-r-0 border-input bg-muted rounded-l-md text-muted-foreground text-sm font-medium">
-                                                +91
-                                            </div>
-                                            <Input
-                                                placeholder="Enter phone number"
-                                                className="rounded-l-none"
-                                                {...field}
-                                            />
-                                        </div>
-                                    </FormControl>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
+                                    <FormField
+                                        control={form.control}
+                                        name="phone"
+                                        render={({ field }) => (
+                                            <FormItem>
+                                                <FormLabel className="font-body text-foreground">Phone Number*</FormLabel>
+                                                <FormControl>
+                                                    <div className="flex">
+                                                        <div className="flex items-center justify-center px-3 border border-r-0 border-input bg-muted rounded-l-md text-muted-foreground text-sm font-medium">
+                                                            +91
+                                                        </div>
+                                                        <Input
+                                                            placeholder="Enter phone number"
+                                                            className="rounded-l-none"
+                                                            {...field}
+                                                        />
+                                                    </div>
+                                                </FormControl>
+                                                <FormMessage />
+                                            </FormItem>
+                                        )}
+                                    />
 
-                        <FormField
-                            control={form.control}
-                            name="degree"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel className="font-body text-foreground">Qualification*</FormLabel>
-                                    <Select onValueChange={field.onChange} defaultValue={field.value}>
-                                        <FormControl>
-                                            <SelectTrigger>
-                                                <SelectValue placeholder="Select Qualification" />
-                                            </SelectTrigger>
-                                        </FormControl>
-                                        <SelectContent>
-                                            <SelectItem value="B.Tech">B.Tech</SelectItem>
-                                            <SelectItem value="M.Tech">M.Tech</SelectItem>
-                                            <SelectItem value="BCA">BCA</SelectItem>
-                                            <SelectItem value="MCA">MCA</SelectItem>
-                                            <SelectItem value="B.Sc">B.Sc</SelectItem>
-                                            <SelectItem value="Other">Other</SelectItem>
-                                        </SelectContent>
-                                    </Select>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
+                                    <FormField
+                                        control={form.control}
+                                        name="degree"
+                                        render={({ field }) => (
+                                            <FormItem>
+                                                <FormLabel className="font-body text-foreground">Qualification*</FormLabel>
+                                                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                                    <FormControl>
+                                                        <SelectTrigger>
+                                                            <SelectValue placeholder="Select Qualification" />
+                                                        </SelectTrigger>
+                                                    </FormControl>
+                                                    <SelectContent>
+                                                        <SelectItem value="B.Tech">B.Tech</SelectItem>
+                                                        <SelectItem value="M.Tech">M.Tech</SelectItem>
+                                                        <SelectItem value="BCA">BCA</SelectItem>
+                                                        <SelectItem value="MCA">MCA</SelectItem>
+                                                        <SelectItem value="B.Sc">B.Sc</SelectItem>
+                                                        <SelectItem value="Other">Other</SelectItem>
+                                                    </SelectContent>
+                                                </Select>
+                                                <FormMessage />
+                                            </FormItem>
+                                        )}
+                                    />
 
-                        <FormField
-                            control={form.control}
-                            name="description"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel className="font-body text-foreground">What Best Describes You?*</FormLabel>
-                                    <Select onValueChange={field.onChange} defaultValue={field.value}>
-                                        <FormControl>
-                                            <SelectTrigger>
-                                                <SelectValue placeholder="Select Option" />
-                                            </SelectTrigger>
-                                        </FormControl>
-                                        <SelectContent>
-                                            <SelectItem value="student">I'm a Student</SelectItem>
-                                            <SelectItem value="working">I'm Working</SelectItem>
-                                            <SelectItem value="job_seeker">I've Graduated and Looking for Work</SelectItem>
-                                        </SelectContent>
-                                    </Select>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
+                                    <FormField
+                                        control={form.control}
+                                        name="description"
+                                        render={({ field }) => (
+                                            <FormItem>
+                                                <FormLabel className="font-body text-foreground">What Best Describes You?*</FormLabel>
+                                                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                                    <FormControl>
+                                                        <SelectTrigger>
+                                                            <SelectValue placeholder="Select Option" />
+                                                        </SelectTrigger>
+                                                    </FormControl>
+                                                    <SelectContent>
+                                                        <SelectItem value="student">I'm a Student</SelectItem>
+                                                        <SelectItem value="working">I'm Working</SelectItem>
+                                                        <SelectItem value="job_seeker">I've Graduated and Looking for Work</SelectItem>
+                                                    </SelectContent>
+                                                </Select>
+                                                <FormMessage />
+                                            </FormItem>
+                                        )}
+                                    />
 
-                        <Button type="submit" className="w-full mt-4" variant="cta" disabled={isSubmitting}>
-                            {isSubmitting ? (
-                                <>
-                                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                                    Submitting
-                                </>
-                            ) : (
-                                'Request Callback'
-                            )}
-                        </Button>
-                    </form>
-                </Form>
+                                    <Button type="submit" className="w-full mt-4" variant="cta" disabled={isSubmitting}>
+                                        {isSubmitting ? (
+                                            <>
+                                                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                                                Submitting
+                                            </>
+                                        ) : (
+                                            'Request Callback'
+                                        )}
+                                    </Button>
+                                </form>
+                            </Form>
+                        </motion.div>
+                    ) : (
+                        <motion.div
+                            key="thank-you-state"
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.4, ease: "easeOut" }}
+                            className="flex flex-col items-center justify-center py-8 text-center space-y-4"
+                        >
+                            <div className="rounded-full bg-primary/10 p-3 mb-2">
+                                <CheckCircle2 className="h-12 w-12 text-primary" />
+                            </div>
+                            <div className="space-y-2">
+                                <h3 className="text-2xl font-heading font-bold text-foreground">
+                                    Thank You!
+                                </h3>
+                                <p className="text-muted-foreground font-body max-w-[300px] mx-auto">
+                                    Request submitted! We will call you back shortly.
+                                </p>
+                            </div>
+                            <Button 
+                                onClick={closeModal}
+                                variant="cta" 
+                                className="px-10 mt-4"
+                            >
+                                Close
+                            </Button>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </DialogContent>
         </Dialog>
     );
